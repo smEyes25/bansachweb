@@ -5,23 +5,6 @@ import { createServer } from 'https';
 
 async function bootstrap() {
   const app: any = await NestFactory.create(AppModule, { cors: true });
-
-  // const pkFile = fs.readFileSync(
-  //   'D://Workspace/API/ban_sach_api_test/src/certificate/private.key',
-  // );
-  // const ctFile = fs.readFileSync(
-  //   'D://Workspace/API/ban_sach_api_test/src/certificate/certificate.crt',
-  // );
-
-  // const httpsOptions: any = {
-  //   key: pkFile,
-  //   cert: ctFile,
-  // };
-
-  // const server: any = createServer(
-  //   httpsOptions,
-  //   app.getHttpAdapter().getInstance(),
-  // );
   await app.listen(3000);
 }
 bootstrap();
