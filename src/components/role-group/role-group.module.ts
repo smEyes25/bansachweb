@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { RoleGroupEntity } from 'src/models/entites/role-group.entity';
-import { RoleGroupController } from './role-group.controller';
-import { RoleGroupDAO } from './role-group.dao';
-import { RoleGroupService } from './role-group.service';
+import { RoleGroupEntity } from 'models/entites/role-group.entity';
+import { RoleGroupController } from 'components/role-group/role-group.controller';
+import { RoleGroupDAO } from 'components/role-group/role-group.dao';
+import { RoleGroupService } from 'components/role-group/role-group.service';
 
 @Module({
   imports: [TypeOrmModule.forFeature([RoleGroupEntity])],

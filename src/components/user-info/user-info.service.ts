@@ -1,8 +1,8 @@
 /* eslint-disable prettier/prettier */
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { UserInfo } from 'src/models/class/user-info.class';
-import { UserInfoEntity } from 'src/models/entites/user-info.entity';
+import { UserInfo } from 'models/class/user-info.class';
+import { UserInfoEntity } from 'models/entites/user-info.entity';
 import { Repository } from 'typeorm';
 
 @Injectable()

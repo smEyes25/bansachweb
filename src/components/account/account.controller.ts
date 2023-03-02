@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import { Controller, Get, Param } from '@nestjs/common';
-import { AccountWithoutPasswordDTO } from 'src/models/dto/account-without-password.dto';
-import { AccountService } from './account.service';
+import { AccountWithoutPasswordDTO } from 'models/dto/account-without-password.dto';
+import { AccountService } from 'components/account/account.service';
 
 @Controller('/account')
 export class AccountController {

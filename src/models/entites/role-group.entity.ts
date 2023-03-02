@@ -1,6 +1,6 @@
-import { BaseSchema } from 'src/commons/base-schema.common';
+import { BaseSchema } from 'commons/base-schema.common';
 import { EntitySchema } from 'typeorm';
-import { RoleGroup } from '../class/role-group.class';
+import { RoleGroup } from 'models/class/role-group.class';
 
 export const RoleGroupEntity = new EntitySchema<RoleGroup>({
   name: 'role_group',

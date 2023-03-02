@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
-import { BaseSchema } from 'src/commons/base-schema.common';
+import { BaseSchema } from 'commons/base-schema.common';
 import { EntitySchema } from 'typeorm';
-import { UserInfo } from '../class/user-info.class';
+import { UserInfo } from 'models/class/user-info.class';
 
 export const UserInfoEntity = new EntitySchema<UserInfo>({
   name: 'user_info',

@@ -6,9 +6,9 @@ import {
   Request,
   Body,
 } from '@nestjs/common';
-import { AppService } from './app.service';
-import { JwtAuthGuard } from './auth/jwt-auth.guard';
-import { LocalAuthGuard } from './auth/local-auth.guard';
+import { AppService } from 'app.service';
+import { JwtAuthGuard } from 'auth/jwt-auth.guard';
+import { LocalAuthGuard } from 'auth/local-auth.guard';
 
 @Controller('/v1/api')
 export class AppController {

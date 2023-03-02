@@ -1,9 +1,9 @@
 /* eslint-disable prettier/prettier */
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { UserInfoEntity } from 'src/models/entites/user-info.entity';
-import { UserInfoController } from './user-info.controller';
-import { UserInfoService } from './user-info.service';
+import { UserInfoEntity } from 'models/entites/user-info.entity';
+import { UserInfoController } from 'components/user-info/user-info.controller';
+import { UserInfoService } from 'components/user-info/user-info.service';
 
 @Module({
   imports: [TypeOrmModule.forFeature([UserInfoEntity])],

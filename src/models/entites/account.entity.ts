@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { BaseSchemaWithDate } from 'src/commons/base-schema.common';
+import { BaseSchemaWithDate } from 'commons/base-schema.common';
 import { EntitySchema } from 'typeorm';
 import { Account } from '../class/account.class';
 
