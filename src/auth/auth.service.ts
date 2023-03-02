@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
-import { checkPassword } from 'commons/utils/password.utils';
-import { AccountService } from 'components/account/account.service';
-import { AccountWithoutPasswordDTO } from 'models/dto/account-without-password.dto';
-import { RegisterDTO } from 'models/dto/register.dto';
+import { checkPassword } from '../commons/utils/password.utils';
+import { AccountService } from '../components/account/account.service';
+import { AccountWithoutPasswordDTO } from '../models/dto/account-without-password.dto';
+import { RegisterDTO } from '../models/dto/register.dto';
 
 @Injectable()
 export class AuthService {

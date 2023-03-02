@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { RoleGroup } from 'models/class/role-group.class';
-import { RoleGroupEntity } from 'models/entites/role-group.entity';
+import { RoleGroup } from '../../models/class/role-group.class';
+import { RoleGroupEntity } from '../../models/entites/role-group.entity';
 import { Repository } from 'typeorm';
-import { RoleGroupDAO } from 'components/role-group/role-group.dao';
+import { RoleGroupDAO } from '../../components/role-group/role-group.dao';
 
 @Injectable()
 export class RoleGroupService {

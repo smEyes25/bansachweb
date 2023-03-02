@@ -1,10 +1,10 @@
 /* eslint-disable prettier/prettier */
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { AccountEntity } from 'models/entites/account.entity';
-import { RoleEntity } from 'models/entites/role.entity';
-import { RoleGroupEntity } from 'models/entites/role-group.entity';
-import { UserInfoEntity } from 'models/entites/user-info.entity';
+import { AccountEntity } from '../../../models/entites/account.entity';
+import { RoleEntity } from '../../../models/entites/role.entity';
+import { RoleGroupEntity } from '../../../models/entites/role-group.entity';
+import { UserInfoEntity } from '../../../models/entites/user-info.entity';
 
 @Module({
   imports: [

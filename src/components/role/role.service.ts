@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { CommonUtils } from 'commons/utils/common.utils';
-import { DateUtils } from 'commons/utils/date.utils';
-import { Role } from 'models/class/role.class';
-import { RoleEntity } from 'models/entites/role.entity';
+import { CommonUtils } from '../../commons/utils/common.utils';
+import { DateUtils } from '../../commons/utils/date.utils';
+import { Role } from '../../models/class/role.class';
+import { RoleEntity } from '../../models/entites/role.entity';
 import { Repository } from 'typeorm';
 
 @Injectable()
