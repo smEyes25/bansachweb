@@ -4,7 +4,7 @@ import { AppModule } from './app.module';
 import { createServer } from 'https';
 
 async function bootstrap() {
-  const app: any = await NestFactory.create(AppModule);
+  const app: any = await NestFactory.create(AppModule, { cors: true });
 
   // const pkFile = fs.readFileSync(
   //   'D://Workspace/API/ban_sach_api_test/src/certificate/private.key',
