@@ -3,7 +3,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { CommonUtils } from 'src/commons/utils/common.utils';
 import { DateUtils } from 'src/commons/utils/date.utils';
-import { hash, checkPassword } from 'src/commons/utils/password.utils';
+import { hash, checkPassword } from '../../commons/utils/password.utils';
 import { Account } from 'src/models/class/account.class';
 import { RoleGroup } from 'src/models/class/role-group.class';
 import { UserInfo } from 'src/models/class/user-info.class';
