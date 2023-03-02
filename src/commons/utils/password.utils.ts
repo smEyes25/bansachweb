@@ -1,4 +1,4 @@
-import bcrypt, { hashSync, compareSync } from 'bcrypt';
+import { hashSync, compareSync } from 'bcrypt';
 import { Constants } from '../constants.common';
 
 export class PasswordUtils {
