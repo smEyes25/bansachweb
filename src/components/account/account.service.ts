@@ -3,7 +3,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { CommonUtils } from 'src/commons/utils/common.utils';
 import { DateUtils } from 'src/commons/utils/date.utils';
-import { PasswordUtils } from 'src/commons/utils/password.utils';
+import { hash, checkPassword } from 'src/commons/utils/password.utils';
 import { Account } from 'src/models/class/account.class';
 import { RoleGroup } from 'src/models/class/role-group.class';
 import { UserInfo } from 'src/models/class/user-info.class';
@@ -103,7 +103,7 @@ export class AccountService {
       modified_date: null,
       last_logged_in_date: null,
       username: input.username,
-      password: PasswordUtils.hash(input.password),
+      password: hash(input.password),
       status: 1,
       user_info_id: id.userInfoId,
     };
