@@ -7,6 +7,7 @@ import { RoleModule } from './components/role/role.module';
 import { RoleGroupModule } from './components/role-group/role-group.module';
 import { UserInfoModule } from './components/user/user.module';
 import { ConfigModule } from './configs/databases/mariadb/config.module';
+import { AccountValidator } from './validator/account.validator';
 
 @Module({
   imports: [
@@ -18,6 +19,6 @@ import { ConfigModule } from './configs/databases/mariadb/config.module';
     RoleGroupModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, AccountValidator],
 })
 export class AppModule {}
