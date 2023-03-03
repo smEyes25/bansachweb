@@ -2,14 +2,13 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { CommonUtils } from '../../commons/utils/common.utils';
 import { DateUtils } from '../../commons/utils/date.utils';
-import { Role } from '../../models/class/role.class';
-import { RoleEntity } from '../../models/entites/role.entity';
+import { Role } from '../../models/entites/role.entity';
 import { Repository } from 'typeorm';
 
 @Injectable()
 export class RoleService {
   constructor(
-    @InjectRepository(RoleEntity)
+    @InjectRepository(Role)
     private roleRespository: Repository<Role>,
   ) {}
 
@@ -30,7 +29,7 @@ export class RoleService {
       id: CommonUtils.generateID('ROLE_ID_'),
       name,
       created_date: DateUtils.getToday(),
-      modified_date: null,
+      modified_date: DateUtils.getToday(),
     });
 
     return await this.roleRespository.save(role);

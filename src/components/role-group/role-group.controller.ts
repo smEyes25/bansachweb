@@ -1,5 +1,5 @@
 import { Controller, Get } from '@nestjs/common';
-import { RoleGroup } from '../../models/class/role-group.class';
+import { RoleGroup } from 'src/models/entites/role-group.entity';
 import { RoleGroupService } from '../../components/role-group/role-group.service';
 
 @Controller('/role_group')

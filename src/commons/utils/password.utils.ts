@@ -9,14 +9,3 @@ export function hash(password: string): string {
 export function checkPassword(password: string, hashPassword: string): boolean {
   return compareSync(password, hashPassword);
 }
-
-// export class PasswordUtils {
-//   static hash(password: string): string {
-//     const hash = hashSync(password, Constants.SALT_ROUNDS);
-//     return hash;
-//   }
-
-//   static checkPassword(password: string, hashPassword: string): boolean {
-//     return compareSync(password, hashPassword);
-//   }
-// }

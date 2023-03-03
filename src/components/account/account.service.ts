@@ -3,26 +3,25 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { CommonUtils } from '../../commons/utils/common.utils';
 import { DateUtils } from '../../commons/utils/date.utils';
-import { hash, checkPassword } from '../../commons/utils/password.utils';
-import { Account } from '../../models/class/account.class';
-import { RoleGroup } from '../../models/class/role-group.class';
-import { UserInfo } from '../../models/class/user-info.class';
 import { AccountWithoutPasswordDTO } from '../../models/dto/account-without-password.dto';
 import { AccountDTO } from '../../models/dto/account.dto';
 import { RegisterDTO } from '../../models/dto/register.dto';
-import { AccountEntity } from '../../models/entites/account.entity';
+import { Account } from '../../models/entites/account.entity';
 import { Repository } from 'typeorm';
 import { RoleGroupService } from '../role-group/role-group.service';
 import { RoleService } from '../role/role.service';
-import { UserInfoService } from '../user-info/user-info.service';
+import { UserService } from '../user/user.service';
+import { User } from '../../models/entites/user.entity';
+import { RoleGroup } from '../../models/entites/role-group.entity';
+import { hash } from '../../commons/utils/password.utils';
 
 @Injectable()
 export class AccountService {
   constructor(
-    @InjectRepository(AccountEntity)
+    @InjectRepository(Account)
     private accountRepository: Repository<Account>,
     private roleGroupService: RoleGroupService,
-    private userInfoService: UserInfoService,
+    private userService: UserService,
     private roleService: RoleService,
   ) {}
 
@@ -90,7 +89,7 @@ export class AccountService {
 
   async createAdminAccount(input: RegisterDTO): Promise<boolean> {
     const id: any = {
-      userInfoId: CommonUtils.generateID('USER_ID_'),
+      userId: CommonUtils.generateID('USER_ID_'),
       accountId: CommonUtils.generateID('ACCOUNT_ID_'),
       roleGroupId: CommonUtils.generateID('ROLE_GROUP_ID_'),
     };
@@ -100,17 +99,17 @@ export class AccountService {
     const account: Account = {
       id: id.accountId,
       created_date: DateUtils.getToday(),
-      modified_date: null,
-      last_logged_in_date: null,
+      modified_date: DateUtils.getToday(),
+      last_logged_in_date: DateUtils.getToday(),
       username: input.username,
       password: hash(input.password),
       status: 1,
-      user_info_id: id.userInfoId,
+      user_id: id.userId,
     };
 
-    const userInfo: UserInfo = {
-      id: id.userInfoId,
-      full_name: input.fullname,
+    const user: User = {
+      id: id.userId,
+      full_name: input.full_name,
       address: input.address,
       phone_number: input.phone_number,
       email: input.email,
@@ -124,7 +123,7 @@ export class AccountService {
     };
 
     await this.create(account);
-    await this.userInfoService.create(userInfo);
+    await this.userService.create(user);
     await this.roleGroupService.create(roleGroup);
 
     return true;

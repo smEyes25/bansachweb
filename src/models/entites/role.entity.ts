@@ -1,17 +1,27 @@
-import {
-  BaseSchema,
-  BaseSchemaWithDate,
-} from '../../commons/base-schema.common';
-import { EntitySchema } from 'typeorm';
-import { Role } from '../../models/class/role.class';
+import { Column, Entity, PrimaryColumn } from 'typeorm';
+@Entity()
+export class Role {
+  @PrimaryColumn({
+    type: 'varchar',
+    length: 120,
+    unique: true,
+  })
+  id: string;
 
-export const RoleEntity = new EntitySchema<Role>({
-  name: 'role',
-  columns: {
-    ...BaseSchemaWithDate,
-    name: {
-      type: 'varchar',
-      length: 50,
-    },
-  },
-});
+  @Column({
+    type: 'date',
+  })
+  created_date: Date;
+
+  @Column({
+    type: 'date',
+  })
+  modified_date: Date;
+
+  @Column({
+    type: 'varchar',
+    length: 50,
+    unique: true,
+  })
+  name: string;
+}

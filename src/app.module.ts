@@ -5,7 +5,7 @@ import { AuthModule } from './auth/auth.module';
 import { AccountModule } from './components/account/account.module';
 import { RoleModule } from './components/role/role.module';
 import { RoleGroupModule } from './components/role-group/role-group.module';
-import { UserInfoModule } from './components/user-info/user-info.module';
+import { UserInfoModule } from './components/user/user.module';
 import { ConfigModule } from './configs/databases/mariadb/config.module';
 
 @Module({
