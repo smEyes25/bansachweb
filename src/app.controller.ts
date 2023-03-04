@@ -48,30 +48,30 @@ export class AppController {
 
   //check login
   // @UseGuards(LocalAuthGuard)
-  // @Post('/login')
-  // async login(@Body() body) {
-  //   try {
-  //     const result = await this.appService.login(body);
-  //     return result;
-  //   } catch (error) {
-  //     throw new HttpException(
-  //       {
-  //         status: HttpStatus.BAD_REQUEST,
-  //         error: 'Invalid username or wrong password',
-  //       },
-  //       HttpStatus.BAD_REQUEST,
-  //       {
-  //         cause: error,
-  //       },
-  //     );
-  //   }
-  // }
-
   @Post('/login')
   async login(@Body() body) {
-    const result = await this.appService.login(body);
-    return result;
+    try {
+      const result = await this.appService.login(body);
+      return result;
+    } catch (error) {
+      throw new HttpException(
+        {
+          status: HttpStatus.BAD_REQUEST,
+          error: 'Invalid username or wrong password',
+        },
+        HttpStatus.BAD_REQUEST,
+        {
+          cause: error,
+        },
+      );
+    }
   }
+
+  // @Post('/login')
+  // async login(@Body() body) {
+  //   const result = await this.appService.login(body);
+  //   return result;
+  // }
 
   //check jwt token
   @UseGuards(JwtAuthGuard)
