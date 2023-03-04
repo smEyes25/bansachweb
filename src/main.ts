@@ -7,12 +7,7 @@ async function bootstrap() {
     origin: 'https://bookstore-ten-gamma.vercel.app',
     methods: ['GET', 'PUT', 'POST', 'DELETE', 'UPDATE'],
     credentials: true,
-    allowedHeaders: [
-      'X-Requested-With',
-      'Content-Type',
-      'Authorization',
-      'Access-Control-Allow-Origin',
-    ],
+    allowedHeaders: 'Access-Control-Allow-Origin',
   });
   await app.listen(3000);
 }
