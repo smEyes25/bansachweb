@@ -19,17 +19,6 @@ import { User } from '../../../models/entites/user.entity';
       autoLoadEntities: true,
       synchronize: true,
     }),
-    // TypeOrmModule.forRoot({
-    //   type: 'mysql',
-    //   host: 'mysql-113449-0.cloudclusters.net',
-    //   port: 16142,
-    //   username: 'admin',
-    //   password: 'wm1hMxbj',
-    //   database: 'ban_sach',
-    //   entities: [AccountEntity, UserInfoEntity, RoleEntity, RoleGroupEntity],
-    //   synchronize: true,
-    //   autoLoadEntities: true,
-    // }),
   ],
 })
 export class ConfigModule {}
