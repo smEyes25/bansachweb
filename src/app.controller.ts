@@ -4,6 +4,7 @@ import {
   Post,
   UseGuards,
   Request,
+  Response,
   Body,
 } from '@nestjs/common';
 import { HttpStatus } from '@nestjs/common/enums';
@@ -76,7 +77,8 @@ export class AppController {
   //check jwt token
   @UseGuards(JwtAuthGuard)
   @Get('/profile')
-  getProfile(@Request() req) {
+  getProfile(@Request() req, @Response() res) {
+    res.status(200);
     return req.user;
   }
 }
