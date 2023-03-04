@@ -5,9 +5,9 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.enableCors({
     origin: 'https://bookstore-ten-gamma.vercel.app',
-    methods: 'GET,PUT,POST,DELETE,UPDATE,OPTIONS',
+    methods: ['GET', 'PUT', 'POST', 'DELETE', 'UPDATE'],
     credentials: true,
-    allowedHeaders: 'X-Requested-With,content-type, Authorization',
+    allowedHeaders: ['X-Requested-With', 'Content-Type', 'Authorization'],
   });
   await app.listen(3000);
 }
