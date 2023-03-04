@@ -34,6 +34,7 @@ export class AppController {
     try {
       await this.appService.registerAdminAccount(body);
     } catch (error) {
+      console.log(error);
       throw new HttpException(
         {
           status: HttpStatus.BAD_REQUEST,
@@ -55,6 +56,7 @@ export class AppController {
       const result = await this.appService.login(body);
       return result;
     } catch (error) {
+      console.log(error);
       throw new HttpException(
         {
           status: HttpStatus.BAD_REQUEST,
@@ -77,8 +79,11 @@ export class AppController {
   //check jwt token
   @UseGuards(JwtAuthGuard)
   @Get('/profile')
-  getProfile(@Request() req, @Response() res) {
-    res.status(200);
-    return req.user;
+  getProfile(@Request() req) {
+    try {
+      return req.user;
+    } catch (error) {
+      console.log(error);
+    }
   }
 }
