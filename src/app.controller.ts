@@ -77,7 +77,7 @@ export class AppController {
   // }
 
   //check jwt token
-  @UseGuards(JwtAuthGuard)
+  // @UseGuards(JwtAuthGuard)
   @Get('/profile')
   getProfile(@Request() req) {
     try {
