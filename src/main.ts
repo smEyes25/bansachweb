@@ -4,10 +4,7 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.enableCors({
-    origin: [
-      'https://bookstore-ten-gamma.vercel.app',
-      'https://bookstore-ten-gamma.vercel.app/login',
-    ],
+    origin: ['https://bookstore-ten-gamma.vercel.app'],
     methods: ['GET', 'POST'],
     credentials: true,
   });
