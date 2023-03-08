@@ -6,6 +6,7 @@ import {
   Request,
   Response,
   Body,
+  HttpCode,
 } from '@nestjs/common';
 import { HttpStatus } from '@nestjs/common/enums';
 import { HttpException } from '@nestjs/common/exceptions';
@@ -51,6 +52,7 @@ export class AppController {
   //check login
   // @UseGuards(LocalAuthGuard)
   @Post('/login')
+  @HttpCode(200)
   async login(@Body() body) {
     try {
       const result = await this.appService.login(body);
