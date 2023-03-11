@@ -55,6 +55,7 @@ export class AppController {
   @HttpCode(200)
   async login(@Body() body) {
     try {
+      body = JSON.parse(body);
       const result = await this.appService.login(body);
       return result;
     } catch (error) {
